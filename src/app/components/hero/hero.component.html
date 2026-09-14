@@ -1,0 +1,24 @@
+<section class="hero" id="top" aria-labelledby="hero-brand">
+  <div class="hero-media" aria-hidden="true">
+    @for (frame of frames; track frame; let i = $index) {
+      <div class="slide" [class.active]="i === active">
+        <img [src]="frame" alt="" />
+      </div>
+    }
+    <div class="hero-shade"></div>
+  </div>
+
+  <div class="container hero-content">
+    <p class="eyebrow">Since {{ company.founded }} · {{ company.cityEn }}</p>
+    <h1 id="hero-brand">
+      <span class="ar">{{ company.nameAr }}</span>
+      <span class="en">{{ company.nameEn }}</span>
+    </h1>
+    <p class="tagline">{{ company.tagline }}</p>
+    <p class="support">{{ company.heroSupport }}</p>
+    <div class="actions">
+      <a class="btn btn-light" href="#services">استكشف خدماتنا</a>
+      <a class="btn btn-ghost" href="#contact">تواصل معنا</a>
+    </div>
+  </div>
+</section>

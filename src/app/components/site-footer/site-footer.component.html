@@ -1,0 +1,18 @@
+<footer class="footer">
+  <div class="container inner">
+    <div class="brand-row">
+      <img src="assets/logos/logo-02-light.png" alt="{{ company.nameAr }}" />
+      <div>
+        <strong>{{ company.nameAr }}</strong>
+        <span class="en">{{ company.nameEn }}</span>
+      </div>
+    </div>
+    <p>{{ company.tagline }} · منذ {{ company.founded }} في {{ company.city }}</p>
+    <div class="meta">
+      <a [href]="company.contact.phoneHref">{{ company.contact.phone }}</a>
+      <a [href]="'mailto:' + company.contact.email">{{ company.contact.email }}</a>
+      <a [href]="company.contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="copy">© {{ year }} {{ company.nameEn }}. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>

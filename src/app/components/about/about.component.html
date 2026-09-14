@@ -1,0 +1,76 @@
+<section class="highlights" aria-label="أرقام ثروات">
+  <div class="container row">
+    @for (item of highlights; track item.label) {
+      <div class="stat">
+        <strong>{{ item.value }}</strong>
+        <span>{{ item.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <p class="section-label">Who we are</p>
+        <h2 class="section-title">من نحن</h2>
+        <p class="lead">{{ company.aboutLead }}</p>
+        @for (para of company.about; track $index) {
+          <p class="body">{{ para }}</p>
+        }
+      </div>
+
+      <aside class="side">
+        <article>
+          <h3>رؤيتنا</h3>
+          <p>{{ company.vision }}</p>
+        </article>
+        <article>
+          <h3>رسالتنا</h3>
+          <p>{{ company.mission }}</p>
+        </article>
+        <article>
+          <h3>أهدافنا الاستراتيجية</h3>
+          <ul>
+            @for (item of company.objectives; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      </aside>
+    </div>
+
+    <div class="pillars">
+      <h3 class="pillars-title">وحدات أعمالنا الاستراتيجية</h3>
+      <div class="pillar-grid">
+        @for (pillar of pillars; track pillar.title) {
+          <article>
+            <span>{{ pillar.titleEn }}</span>
+            <h4>{{ pillar.title }}</h4>
+            <p>{{ pillar.text }}</p>
+          </article>
+        }
+      </div>
+    </div>
+
+    <div class="values">
+      <div class="values-head">
+        <p class="section-label">Our values</p>
+        <h3>قيمنا</h3>
+        <p>المبادئ التي توجه عملنا مع العملاء والشركاء في كل مشروع.</p>
+      </div>
+      <ul>
+        @for (value of company.values; track value.title; let i = $index) {
+          <li>
+            <span class="num">{{ indexLabel(i) }}</span>
+            <div>
+              <h4>{{ value.title }}</h4>
+              <p>{{ value.text }}</p>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

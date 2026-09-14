@@ -1,0 +1,25 @@
+<header class="header" [class.scrolled]="scrolled">
+  <div class="container inner">
+    <a class="brand" href="#top" (click)="closeMenu()">
+      <img src="assets/logos/logo-02-light.png" alt="ثروات التقنية — Tharawat Technology" />
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="القائمة"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" [class.open]="menuOpen" aria-label="القائمة الرئيسية">
+      @for (link of links; track link.href) {
+        <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      }
+      <a class="btn btn-primary nav-cta" href="#contact" (click)="closeMenu()">تواصل معنا</a>
+    </nav>
+  </div>
+</header>

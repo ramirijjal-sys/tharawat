@@ -1,0 +1,46 @@
+<section class="section services" id="services">
+  <div class="container">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">خدماتنا</h2>
+    <p class="section-lead">
+      مجموعة متكاملة من الخدمات التقنية والمهنية — من تكامل الأنظمة والبرمجيات المؤسسية إلى البنية التحتية، التدريب، المصنع الرقمي، والبحث والتطوير.
+    </p>
+
+    <div class="layout">
+      <div class="tabs" role="tablist" aria-label="خدمات ثروات">
+        @for (service of services; track service.id) {
+          <button
+            type="button"
+            role="tab"
+            class="tab"
+            [class.active]="service.id === activeId"
+            [attr.aria-selected]="service.id === activeId"
+            (click)="select(service.id)"
+          >
+            {{ service.title }}
+          </button>
+        }
+      </div>
+
+      <div class="panel" role="tabpanel" [attr.id]="'panel-' + active.id">
+        <h3>{{ active.title }}</h3>
+        <p>{{ active.description }}</p>
+        <h4>تشمل</h4>
+        <ul>
+          @for (item of active.items; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="invest" id="factory">
+      <div>
+        <p class="section-label">Investment</p>
+        <h3>{{ investment.title }}</h3>
+        <p>{{ investment.text }}</p>
+        <p class="muted">{{ investment.strategy }}</p>
+      </div>
+    </div>
+  </div>
+</section>

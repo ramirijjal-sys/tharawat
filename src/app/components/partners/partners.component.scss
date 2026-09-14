@@ -1,0 +1,136 @@
+.partners {
+  background: var(--surface);
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.block {
+  padding: 1.5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.block h3 {
+  margin: 0 0 1rem;
+  color: var(--brand-deep);
+  font-size: 1.1rem;
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.names span {
+  font-family: var(--font-en);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.65rem;
+  background: var(--surface);
+  color: var(--brand-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.cats {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.cats article {
+  padding: 1.15rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cats h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.98rem;
+  color: var(--brand-deep);
+}
+
+.cats p {
+  margin: 0;
+  font-family: var(--font-en);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.why {
+  margin-top: 3rem;
+}
+
+.why h3 {
+  margin: 0 0 1.25rem;
+  font-size: 1.45rem;
+  color: var(--brand-deep);
+}
+
+.why ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.why li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.why li:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.why span {
+  font-family: var(--font-en);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.why p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--brand-deep);
+}
+
+@media (max-width: 960px) {
+  .two,
+  .cats,
+  .why ol {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .two,
+  .cats,
+  .why ol {
+    grid-template-columns: 1fr;
+  }
+}

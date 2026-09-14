@@ -1,0 +1,15 @@
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  background: var(--brand);
+  color: var(--ink-on-dark);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}

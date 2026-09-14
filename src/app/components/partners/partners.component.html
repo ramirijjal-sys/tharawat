@@ -1,0 +1,47 @@
+<section class="section partners" id="partners">
+  <div class="container">
+    <p class="section-label">Partners & ecosystem</p>
+    <h2 class="section-title">شركاؤنا ومنظومتنا</h2>
+    <p class="section-lead">{{ company.ecosystem }}</p>
+
+    <div class="two">
+      <div class="block">
+        <h3>الشركاء التقنيون</h3>
+        <div class="names">
+          @for (name of partners.vendors; track name) {
+            <span>{{ name }}</span>
+          }
+        </div>
+      </div>
+      <div class="block">
+        <h3>الموزعون</h3>
+        <div class="names">
+          @for (name of partners.distributors; track name) {
+            <span>{{ name }}</span>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="cats">
+      @for (cat of partners.categories; track cat.title) {
+        <article>
+          <h4>{{ cat.title }}</h4>
+          <p>{{ cat.items.join(' · ') }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="why" id="why">
+      <h3>لماذا ثروات؟</h3>
+      <ol>
+        @for (item of whyUs; track item; let i = $index) {
+          <li>
+            <span>{{ i + 1 }}</span>
+            <p>{{ item }}</p>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>
