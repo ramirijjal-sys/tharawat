@@ -2,6 +2,12 @@
 
 Official company website for **Tharawat Technology** — built with Angular 19.
 
+## Live site
+
+[https://ramirijjal-sys.github.io/tharawat/](https://ramirijjal-sys.github.io/tharawat/)
+
+Deployed automatically from `main` via GitHub Actions (Pages).
+
 ## Features
 
 - Arabic-first RTL layout
@@ -23,10 +29,16 @@ npm start
 
 Open [http://localhost:4200](http://localhost:4200).
 
-## Build for production
+## Build
 
 ```bash
 npm run build
+```
+
+GitHub Pages build:
+
+```bash
+npm run build:pages
 ```
 
 Output: `dist/tharawat-website/browser`
