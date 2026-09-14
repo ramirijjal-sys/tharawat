@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-site-header',
@@ -6,7 +6,7 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.scss',
 })
-export class SiteHeaderComponent {
+export class SiteHeaderComponent implements OnInit {
   menuOpen = false;
   scrolled = false;
 
@@ -18,9 +18,17 @@ export class SiteHeaderComponent {
     { href: '#contact', label: 'تواصل' },
   ];
 
+  ngOnInit(): void {
+    this.updateScrollState();
+  }
+
   @HostListener('window:scroll')
   onScroll(): void {
-    this.scrolled = window.scrollY > 40;
+    this.updateScrollState();
+  }
+
+  private updateScrollState(): void {
+    this.scrolled = window.scrollY > 24;
   }
 
   toggleMenu(): void {

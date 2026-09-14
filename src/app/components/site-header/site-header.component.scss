@@ -1,35 +1,27 @@
 .header {
-  position: absolute;
+  position: fixed;
   inset-inline: 0;
   top: 0;
   z-index: 100;
-  padding: 1.15rem 0;
+  padding: 1rem 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition:
+    background 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    padding 0.45s ease,
+    backdrop-filter 0.45s ease;
 }
 
 .header.scrolled {
-  position: sticky;
-  background: rgba(243, 247, 249, 0.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.header.scrolled .menu-toggle {
-  border-color: var(--line);
-  background: var(--surface-2);
-}
-
-.header.scrolled .menu-toggle span {
-  background: var(--brand-deep);
-}
-
-.header.scrolled .nav a:not(.btn) {
-  color: var(--ink-muted);
-  background: transparent;
-}
-
-.header.scrolled .nav a:not(.btn):hover {
-  color: var(--brand);
+  padding: 0.75rem 0;
+  background: rgba(30, 51, 64, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(14, 28, 36, 0.25);
 }
 
 .inner {
@@ -43,11 +35,11 @@
   height: 48px;
   width: auto;
   filter: brightness(0) invert(1);
-  transition: filter 0.25s ease;
+  transition: height 0.45s ease, opacity 0.3s ease;
 }
 
 .header.scrolled .brand img {
-  filter: none;
+  height: 42px;
 }
 
 .nav {
@@ -57,10 +49,10 @@
 }
 
 .nav a:not(.btn) {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.86);
   font-size: 0.92rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease;
 }
 
 .nav a:not(.btn):hover {
@@ -83,6 +75,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .menu-toggle span {
@@ -107,8 +100,8 @@
     gap: 0.2rem;
     padding: 1rem;
     border-radius: var(--radius-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--line);
+    background: rgba(30, 51, 64, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-lg);
     opacity: 0;
     pointer-events: none;
@@ -123,9 +116,8 @@
   }
 
   .nav a:not(.btn) {
-    color: var(--ink-muted) !important;
+    color: rgba(255, 255, 255, 0.86);
     padding: 0.75rem 0.4rem;
-    background: transparent !important;
   }
 
   .nav-cta {
