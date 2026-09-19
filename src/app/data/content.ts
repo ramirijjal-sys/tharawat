@@ -205,30 +205,36 @@ export const whyUs = [
   'التزام بتحقيق نتائج عملية قابلة للقياس',
 ];
 
+export type PartnerVendor = {
+  name: string;
+  /** simpleicons.org slug — used for logo CDN */
+  slug: string;
+};
+
 export const partners = {
   vendors: [
-    'Apple',
-    'Lenovo',
-    'Dell',
-    'HP',
-    'Asus',
-    'Acer',
-    'Google',
-    'LG',
-    'Samsung',
-    'Cisco',
-    'Adobe',
-    'Microsoft',
-    'SAP',
-    'Oracle',
-    'BenQ',
-    'Odoo',
-    'Huawei',
-    'Dahua',
-    'VMware',
-    'Fortinet',
-    'Kaspersky',
-  ],
+    { name: 'Apple', slug: 'apple' },
+    { name: 'Lenovo', slug: 'lenovo' },
+    { name: 'Dell', slug: 'dell' },
+    { name: 'HP', slug: 'hp' },
+    { name: 'Asus', slug: 'asus' },
+    { name: 'Acer', slug: 'acer' },
+    { name: 'Google', slug: 'google' },
+    { name: 'LG', slug: 'lg' },
+    { name: 'Samsung', slug: 'samsung' },
+    { name: 'Cisco', slug: 'cisco' },
+    { name: 'Adobe', slug: 'adobe' },
+    { name: 'Microsoft', slug: 'microsoft' },
+    { name: 'SAP', slug: 'sap' },
+    { name: 'Oracle', slug: 'oracle' },
+    { name: 'BenQ', slug: 'benq' },
+    { name: 'Odoo', slug: 'odoo' },
+    { name: 'Huawei', slug: 'huawei' },
+    { name: 'Dahua', slug: 'dahua' },
+    { name: 'VMware', slug: 'vmware' },
+    { name: 'Fortinet', slug: 'fortinet' },
+    { name: 'Kaspersky', slug: 'kaspersky' },
+  ] as PartnerVendor[],
   distributors: [
     'Redington',
     'Arab Computers',

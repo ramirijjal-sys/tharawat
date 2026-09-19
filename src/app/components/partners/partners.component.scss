@@ -2,14 +2,9 @@
   background: var(--surface);
 }
 
-.two {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1rem;
+.vendor-block,
+.distributors {
   margin-top: 2.5rem;
-}
-
-.block {
   padding: 1.5rem;
   background: var(--surface-2);
   border: 1px solid var(--line);
@@ -17,10 +12,51 @@
   box-shadow: var(--shadow);
 }
 
-.block h3 {
-  margin: 0 0 1rem;
+.vendor-block h3,
+.distributors h3 {
+  margin: 0 0 1.15rem;
   color: var(--brand-deep);
   font-size: 1.1rem;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 0.85rem;
+}
+
+.logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 96px;
+  padding: 0.9rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+}
+
+.logo-card img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.logo-card .label {
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-align: center;
+  line-height: 1.3;
 }
 
 .names {
@@ -120,7 +156,6 @@
 }
 
 @media (max-width: 960px) {
-  .two,
   .cats,
   .why ol {
     grid-template-columns: 1fr 1fr;
@@ -128,9 +163,12 @@
 }
 
 @media (max-width: 640px) {
-  .two,
   .cats,
   .why ol {
     grid-template-columns: 1fr;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

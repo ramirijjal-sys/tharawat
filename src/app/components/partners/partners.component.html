@@ -4,22 +4,29 @@
     <h2 class="section-title">شركاؤنا ومنظومتنا</h2>
     <p class="section-lead">{{ company.ecosystem }}</p>
 
-    <div class="two">
-      <div class="block">
-        <h3>الشركاء التقنيون</h3>
-        <div class="names">
-          @for (name of partners.vendors; track name) {
-            <span>{{ name }}</span>
-          }
-        </div>
+    <div class="vendor-block">
+      <h3>الشركاء التقنيون</h3>
+      <div class="logo-grid">
+        @for (vendor of partners.vendors; track vendor.name) {
+          <article class="logo-card" [attr.title]="vendor.name">
+            <img
+              [src]="logoUrl(vendor)"
+              [alt]="vendor.name"
+              loading="lazy"
+              (error)="onLogoError($event)"
+            />
+            <span class="label">{{ vendor.name }}</span>
+          </article>
+        }
       </div>
-      <div class="block">
-        <h3>الموزعون</h3>
-        <div class="names">
-          @for (name of partners.distributors; track name) {
-            <span>{{ name }}</span>
-          }
-        </div>
+    </div>
+
+    <div class="distributors">
+      <h3>الموزعون</h3>
+      <div class="names">
+        @for (name of partners.distributors; track name) {
+          <span>{{ name }}</span>
+        }
       </div>
     </div>
 
