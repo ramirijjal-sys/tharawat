@@ -207,33 +207,35 @@ export const whyUs = [
 
 export type PartnerVendor = {
   name: string;
-  /** simpleicons.org slug — used for logo CDN */
-  slug: string;
+  /** simple-icons slug when available */
+  slug?: string;
+  /** domain for favicon fallback */
+  domain: string;
 };
 
 export const partners = {
   vendors: [
-    { name: 'Apple', slug: 'apple' },
-    { name: 'Lenovo', slug: 'lenovo' },
-    { name: 'Dell', slug: 'dell' },
-    { name: 'HP', slug: 'hp' },
-    { name: 'Asus', slug: 'asus' },
-    { name: 'Acer', slug: 'acer' },
-    { name: 'Google', slug: 'google' },
-    { name: 'LG', slug: 'lg' },
-    { name: 'Samsung', slug: 'samsung' },
-    { name: 'Cisco', slug: 'cisco' },
-    { name: 'Adobe', slug: 'adobe' },
-    { name: 'Microsoft', slug: 'microsoft' },
-    { name: 'SAP', slug: 'sap' },
-    { name: 'Oracle', slug: 'oracle' },
-    { name: 'BenQ', slug: 'benq' },
-    { name: 'Odoo', slug: 'odoo' },
-    { name: 'Huawei', slug: 'huawei' },
-    { name: 'Dahua', slug: 'dahua' },
-    { name: 'VMware', slug: 'vmware' },
-    { name: 'Fortinet', slug: 'fortinet' },
-    { name: 'Kaspersky', slug: 'kaspersky' },
+    { name: 'Apple', slug: 'apple', domain: 'apple.com' },
+    { name: 'Lenovo', slug: 'lenovo', domain: 'lenovo.com' },
+    { name: 'Dell', slug: 'dell', domain: 'dell.com' },
+    { name: 'HP', slug: 'hp', domain: 'hp.com' },
+    { name: 'Asus', slug: 'asus', domain: 'asus.com' },
+    { name: 'Acer', slug: 'acer', domain: 'acer.com' },
+    { name: 'Google', slug: 'google', domain: 'google.com' },
+    { name: 'LG', slug: 'lg', domain: 'lg.com' },
+    { name: 'Samsung', slug: 'samsung', domain: 'samsung.com' },
+    { name: 'Cisco', slug: 'cisco', domain: 'cisco.com' },
+    { name: 'Adobe', slug: 'adobe', domain: 'adobe.com' },
+    { name: 'Microsoft', slug: 'microsoft', domain: 'microsoft.com' },
+    { name: 'SAP', slug: 'sap', domain: 'sap.com' },
+    { name: 'Oracle', slug: 'oracle', domain: 'oracle.com' },
+    { name: 'BenQ', domain: 'benq.com' },
+    { name: 'Odoo', slug: 'odoo', domain: 'odoo.com' },
+    { name: 'Huawei', slug: 'huawei', domain: 'huawei.com' },
+    { name: 'Dahua', domain: 'dahuasecurity.com' },
+    { name: 'VMware', slug: 'vmware', domain: 'vmware.com' },
+    { name: 'Fortinet', slug: 'fortinet', domain: 'fortinet.com' },
+    { name: 'Kaspersky', slug: 'kaspersky', domain: 'kaspersky.com' },
   ] as PartnerVendor[],
   distributors: [
     'Redington',

@@ -13,7 +13,7 @@
               [src]="logoUrl(vendor)"
               [alt]="vendor.name"
               loading="lazy"
-              (error)="onLogoError($event)"
+              (error)="onLogoError($event, vendor)"
             />
             <span class="label">{{ vendor.name }}</span>
           </article>

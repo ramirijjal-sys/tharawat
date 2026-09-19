@@ -51,6 +51,10 @@
   object-fit: contain;
 }
 
+.logo-card img[src*='simple-icons'] {
+  filter: invert(33%) sepia(18%) saturate(780%) hue-rotate(152deg) brightness(92%);
+}
+
 .logo-card .label {
   font-family: var(--font-en);
   font-size: 0.72rem;
