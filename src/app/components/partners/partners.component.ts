@@ -12,24 +12,13 @@ export class PartnersComponent {
   readonly partners = partners;
   readonly whyUs = whyUs;
 
+  /** Full-color brand marks via site favicons */
   logoUrl(vendor: PartnerVendor): string {
-    if (vendor.slug) {
-      return `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${vendor.slug}.svg`;
-    }
-    return this.faviconUrl(vendor);
-  }
-
-  faviconUrl(vendor: PartnerVendor): string {
     return `https://www.google.com/s2/favicons?domain=${vendor.domain}&sz=128`;
   }
 
-  onLogoError(event: Event, vendor: PartnerVendor): void {
+  onLogoError(event: Event): void {
     const img = event.target as HTMLImageElement;
-    const fallback = this.faviconUrl(vendor);
-    if (img.src !== fallback && !img.src.includes('s2/favicons')) {
-      img.src = fallback;
-      return;
-    }
     img.style.display = 'none';
   }
 }

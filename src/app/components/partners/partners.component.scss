@@ -46,13 +46,9 @@
 }
 
 .logo-card img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-}
-
-.logo-card img[src*='simple-icons'] {
-  filter: invert(33%) sepia(18%) saturate(780%) hue-rotate(152deg) brightness(92%);
 }
 
 .logo-card .label {
